@@ -5,32 +5,32 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="">
+  <section class="h-screen">
     <img src="~/assets/img/Hero.png"
-      class="w-full h-[420px] object-cover [mask-image:linear-gradient(to_bottom,black_70%,transparent)]"
+      class="w-full h-[80%] object-cover [mask-image:linear-gradient(to_bottom,black_70%,transparent)]"
       alt="Hero image">
 
-    <div class="container mx-auto px-6">
-      <div class="relative z-10 -mt-20 ">
+    <div class="max-w-6xl mx-auto px-10">
+      <div class="relative z-10 -mt-60 ">
         <div class="text-brand">
           <div class="font-light text-base">
             Full-stack web developer
           </div>
-          <div class="font-black">
-            <div class="text-5xl">
+          <div class="font-black my-4">
+            <div class="text-7xl">
               SYAFIQ
             </div>
             <div class="text-4xl">
-              ILHAM
+              ILHAM SHOLEHUDIN
             </div>
           </div>
           <div class="font-light text-base">
             based in Indonesia
           </div>
         </div>
-        <div class="mt-5">
-          <a class="bg-container px-5 py-3 rounded-lg">
-            Tell me more
+        <div class="mt-10">
+          <a href="" class="bg-container px-5 py-3 rounded-lg hover:bg-brand hover:text-background">
+            Get my CV
           </a>
         </div>
         <div class="h-20"></div>
@@ -39,59 +39,98 @@
   </section>
 
   <!-- About SECTION -->
-  <section class="py-16 bg-dark">
-    <div class="container mx-auto px-6">
-      <h1 class="text-brand text-3xl font-black">WHO AM I</h1>
-      <p>Hi, everyone!</p>
+  <section id="about" class="py-24 bg-dark text-foreground">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <h1 class="text-brand text-4xl md:text-6xl font-extrabold text-center mb-16 tracking-wide">
+        WHO AM I
+      </h1>
 
-      <img src="~/assets/img/Hero.png" alt="" class="my-10 h-40 w-40 rounded-full object-cover border-2">
+      <div class="flex flex-col-reverse md:flex-row items-center gap-10">
+        <!-- Text Content -->
+        <div class="text-justify max-w-prose text-lg leading-relaxed">
+          <p class="mb-6">
+            I'm a <span class="text-brand font-semibold">web developer</span> with a burning passion for crafting sleek,
+            functional digital experiences.
+          </p>
+          <p class="mb-6">
+            I build modern websites using <span class="text-brand">Laravel</span>, <span
+              class="text-brand">NextJS</span>, and <span class="text-brand">NuxtJS</span>, and I'm always leveling up
+            my skills like a good dev should.
+          </p>
+          <p class="mb-6">
+            I'm a strong communicator and a team player, eager to bring fresh ideas to life. Whether it’s a sleek UI or
+            solving gnarly bugs, I’m here for it.
+          </p>
+          <p class="italic text-center text-brand mt-10">— Doing My Best —</p>
+        </div>
 
-      <div class="text-justify">
-        <p>
-          I am a web developer with strong passion about programming and web developing.
-        </p>
-        <br>
-        <p>
-          I'm capable of designing and creating a website using framework like Laravel, NextJS, and NuxtJS and
-          constantly learning to expand my knowledge and skill set.
-        </p>
-        <br>
-        <p> I have a good communication and teamwork skill and excited about the opportunities to work on innovative
-          project to turn creativity into a engaging web experience.
-        </p>
+        <!-- Image -->
+        <div class="flex-shrink-0">
+          <img src="~/assets/img/about-pic.jpg" alt="Portrait of Syafiq"
+            class="h-60 w-60 md:h-72 md:w-72 rounded-full object-cover border-4 border-brand shadow-lg hover:scale-105 transition duration-300 ease-in-out" />
+        </div>
       </div>
-
-      <div class="mt-10 text-brand text-center">--- Doing My Best ---</div>
     </div>
   </section>
 
+
   <!-- Projects SECTION -->
-  <section class="py-16">
-    <h1 class="text-brand text-2xl font-semibold text-center">Featured Projects</h1>
+  <section id="projects" class="py-16">
+    <h1 class="text-brand text-3xl font-semibold text-center">Featured Projects</h1>
     <p class="text-center">Some fun projects</p>
 
-    <ul class="px-6 mt-10 container mx-auto">
-      <li class="rounded-xl overflow-clip">
-        <img src="~/assets/img/Hero.png" alt="" class="h-40 w-full object-cover">
-        <div class="bg-fg p-5">
-          <h1 class="font-semibold text-lg">Project Name</h1>
-          <p class="">Description</p>
+    <ul class="mt-10 max-w-6xl mx-auto px-10 flex flex-col gap-5">
+      <li class="rounded-xl overflow-clip max-w-2xl mx-auto">
+        <img src="~/assets/img/Hero.png" alt="" class="h-48 w-full object-cover">
+        <div class="bg-container p-5">
+          <h1 class="font-semibold text-lg text-brand mb-2">Exposia</h1>
+          <p class="text-justify">A project which attempts to solves the problem of small business by providing a way
+            for them to
+            build a landing page in minutes. It allows to build a landing page in a modular way. They can choose the
+            appropriate sections style to build a full landing page.</p>
 
-          <ul class="mt-5">
-            <li class="w-8 h-8 border rounded-full flex justify-center items-center">
-              <div>S</div>
+          <ul class="mt-5 flex gap-5">
+            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+              <img src="~/assets/icons/Laravel.svg" alt="laravel" />
+            </li>
+            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+              <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
+            </li>
+            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+              <img src="~/assets/icons/mysql.svg" alt="mysql" />
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="rounded-xl overflow-clip max-w-2xl mx-auto">
+        <img src="~/assets/img/projects-portfolio.png" alt="" class="h-48 w-full object-cover">
+        <div class="bg-container p-5">
+          <h1 class="font-semibold text-lg text-brand mb-2">Portfolio</h1>
+          <p class="text-justify">A commonly seen portfolio website to display and show myself, my projects, my skills,
+            and
+            my
+            experiences</p>
+
+          <ul class="mt-5 flex gap-2">
+            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+              <img src="~/assets/icons/nuxtjs.svg" alt="nuxtjs" />
+            </li>
+            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+              <img src="~/assets/icons/vue.svg" alt="vue" />
+            </li>
+            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+              <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
             </li>
           </ul>
         </div>
       </li>
     </ul>
-
   </section>
 
   <!-- Skills SECTION -->
-  <section class="py-16 bg-dark">
-    <div class="px-6 container mx-auto">
-      <h1 class="text-brand text-2xl font-semibold">Skills</h1>
+  <section id="skills" class="py-16 bg-dark">
+    <div class="max-w-6xl mx-auto px-10">
+      <h1 class="text-brand text-3xl font-semibold">Skills</h1>
       <p>Click them for more details</p>
 
       <div class="grid grid-cols-[min-content_1fr] gap-4 mt-6 text-brand">
@@ -101,8 +140,71 @@
         </div>
         <div>
           <ul class="flex space-x-2 space-y-2 flex-wrap text-sm">
-            <li class="w-8 h-8 border rounded-xl flex justify-center items-center">
-              <div>S</div>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/React.svg" alt="react" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/Vue.svg" alt="vue" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/nextjs.svg" alt="nextjs" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/nuxtjs.svg" alt="nuxtjs" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/Laravel.svg" alt="laravel" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/Javascript.svg" alt="javascript" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/Typescript.svg" alt="typescript" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/Python.svg" alt="python" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/PHP.svg" alt="php" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/html5.svg" alt="html5" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/css3.svg" alt="css3" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/git.svg" alt="git" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/github.svg" alt="github" />
+            </li>
+          </ul>
+
+          <ul class="flex space-x-2 space-y-2 flex-wrap text-sm mt-2">
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/supabase.svg" alt="supabase" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/firebase.svg" alt="firebase" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/mysql.svg" alt="mysql" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/postgresql.svg" alt="postgresql" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/visual_studio_code.svg" alt="visual studio code" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/figma.svg" alt="figma" class="h-8" />
+            </li>
+            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <img src="~/assets/icons/blender.svg" alt="blender" />
             </li>
           </ul>
         </div>
@@ -113,8 +215,11 @@
         </div>
         <div>
           <ul class="flex space-x-2 space-y-2 flex-wrap text-sm">
-            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center">
-              <div>Conversational</div>
+            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <div>Public Speaking</div>
+            </li>
+            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center hover-raise">
+              <div>Team Collaboration</div>
             </li>
           </ul>
         </div>
@@ -125,33 +230,32 @@
         </div>
         <div>
           <ul class="flex space-x-2 space-y-2 flex-wrap text-sm">
-            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center">
+            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center hover-raise">
               <div>English</div>
             </li>
-            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center">
+            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center hover-raise">
               <div>Indonesia</div>
             </li>
           </ul>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Experiences SECTION -->
-  <section class="py-16">
-    <div class="px-6 container mx-auto">
-      <h1 class="text-brand text-2xl font-semibold text-center">My Experiences</h1>
+  <section id="experiences" class="py-16">
+    <div class="max-w-6xl mx-auto px-10">
+      <h1 class="text-brand text-3xl font-semibold text-center">My Experiences</h1>
       <p class="text-center">Not Much but Great Experiences</p>
     </div>
 
-    <div class="px-6 mt-10 container mx-auto">
+    <div class="mt-10 max-w-6xl mx-auto px-10">
       <!-- Timeline Container -->
       <ul class="relative border-l-3 border-brand pl-6">
         <!-- Timeline Items -->
         <div class="relative mb-12">
           <!-- Dot -->
-          <div class="absolute -left-[27px] w-5 h-5 bg-bg rounded-full border-3 border-brand"></div>
+          <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
 
           <p class="mb-6 text-brand font-semibold">Sep 2024 - Feb 2025 • 6 Month</p>
 
@@ -171,7 +275,7 @@
 
         <div class="relative mb-12">
           <!-- Dot -->
-          <div class="absolute -left-[27px] w-5 h-5 bg-bg rounded-full border-3 border-brand"></div>
+          <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
 
           <p class="mb-6 text-brand font-semibold">Feb 2025 - Feb 2025 • 1 Month</p>
 
@@ -196,18 +300,28 @@
 
 
   <footer class="py-16 bg-container rounded-t-xl">
-    <div class="px-6 container mx-auto mb-16">
+    <div class="max-w-6xl mx-auto px-10 mb-16">
       <p class="text-brand font-semibold">Contact Me</p>
-      <h1 class="text-2xl font-semibold">Let's Connect</h1>
+      <h1 class="text-3xl font-semibold">Let's Connect</h1>
 
       <ul class="my-10 space-y-3">
-        <li class="flex space-x-5">
-          <img src="~/assets/icons/gmail.svg" alt="gmail icon" class="text-2xl w-5 aspect-square">
-          <a href="mail:to">syafiqilham.sho@gmail.com</a>
+        <li class="flex space-x-5 items-center">
+          <div class="h-8 w-8 p-1 flex items-center justify-center">
+            <img src="~/assets/icons/gmail.svg" alt="gmail icon">
+          </div>
+          <a href="mailto:syafiqilham.sho@gmail.com">syafiqilham.sho@gmail.com</a>
         </li>
-        <li class="flex space-x-5">
-          <img src="~/assets/icons/github.svg" alt="github icon" class="text-2xl w-5 aspect-square">
-          <a href="mail:to">syafiq-is</a>
+        <li class="flex space-x-5 items-center">
+          <div class="h-8 w-8 p-1 flex items-center justify-center">
+            <img src="~/assets/icons/linkedin.svg" alt="github icon">
+          </div>
+          <a href="https://www.linkedin.com/in/syafiq-ilham-sholehudin-8b3a77295/">Syafiq Ilham Sholehudin</a>
+        </li>
+        <li class="flex space-x-5 items-center">
+          <div class="h-8 w-8 p-1 flex items-center justify-center">
+            <img src="~/assets/icons/github.svg" alt="github icon">
+          </div>
+          <a href="https://github.com/syafiq-is">syafiq-is</a>
         </li>
       </ul>
     </div>

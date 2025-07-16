@@ -2,11 +2,33 @@
 
 :root {
   font-size: 12px;
+  scroll-behavior: smooth;
 
   --background: #2d2b30;
+  --background2: #1d1d1f;
   --foreground: #e3e3e3;
   --brand: #ebc59c;
   --container: #3e3b42;
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-background: var(--background);
+  --color-dark: var(--background2);
+  --color-foreground: var(--foreground);
+  --color-container: var(--container);
+}
+
+@layer utilities {
+  .hover-raise {
+    @apply hover:-translate-y-1 transition-transform duration-200 ease-in-out will-change-transform;
+  }
 }
 
 body.dark {
@@ -44,38 +66,5 @@ body {
   }
   100% {
     transform: translateX(-50%);
-  }
-}
-
-@layer utilities {
-  .bg-dark {
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  .bg-brand {
-    background-color: var(--brand);
-    color: var(--background);
-  }
-  .bg-bg {
-    background-color: var(--background);
-    color: var(--foreground);
-  }
-  .bg-fg {
-    background-color: var(--foreground);
-    color: var(--background);
-  }
-  .bg-container {
-    background-color: var(--container);
-  }
-
-  .text-brand {
-    color: var(--brand);
-  }
-
-  .text-fg {
-    color: var(--foreground);
-  }
-
-  .border-brand {
-    border-color: var(--brand);
   }
 }

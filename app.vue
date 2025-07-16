@@ -1,5 +1,6 @@
 <script setup>
 useHead({
+  title: "Portfolio - Syafiq",
   link: [
     {
       rel: 'stylesheet',
