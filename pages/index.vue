@@ -91,7 +91,7 @@
 
           <ul class="mt-5 flex gap-5">
             <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
-              <img src="~/assets/icons/Laravel.svg" alt="laravel" />
+              <img src="~/assets/icons/laravel.svg" alt="laravel" />
             </li>
             <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
               <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
@@ -141,10 +141,10 @@
         <div>
           <ul class="flex space-x-2 space-y-2 flex-wrap text-sm">
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/React.svg" alt="react" />
+              <img src="~/assets/icons/react.svg" alt="react" />
             </li>
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/Vue.svg" alt="vue" />
+              <img src="~/assets/icons/vue.svg" alt="vue" />
             </li>
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
               <img src="~/assets/icons/nextjs.svg" alt="nextjs" />
@@ -153,19 +153,19 @@
               <img src="~/assets/icons/nuxtjs.svg" alt="nuxtjs" />
             </li>
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/Laravel.svg" alt="laravel" />
+              <img src="~/assets/icons/laravel.svg" alt="laravel" />
             </li>
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/Javascript.svg" alt="javascript" />
+              <img src="~/assets/icons/javascript.svg" alt="javascript" />
             </li>
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/Typescript.svg" alt="typescript" />
+              <img src="~/assets/icons/typescript.svg" alt="typescript" />
             </li>
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/Python.svg" alt="python" />
+              <img src="~/assets/icons/python.svg" alt="python" />
             </li>
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/PHP.svg" alt="php" />
+              <img src="~/assets/icons/php.svg" alt="php" />
             </li>
             <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
               <img src="~/assets/icons/html5.svg" alt="html5" />
