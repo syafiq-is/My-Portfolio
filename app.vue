@@ -1,6 +1,12 @@
 <script setup>
 useHead({
   title: "Portfolio - Syafiq",
+  htmlAttrs: {
+    lang: 'en'
+  },
+  meta: [
+    { name: 'description', content: 'Syafiq Ilham Sholehudin Portfolio Website' }
+  ],
   link: [
     {
       rel: 'stylesheet',

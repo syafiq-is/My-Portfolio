@@ -29,6 +29,10 @@
   .hover-raise {
     @apply hover:-translate-y-1 transition-transform duration-200 ease-in-out will-change-transform;
   }
+
+  .hover-grow {
+    @apply hover:scale-105 transition-transform duration-200 ease-in-out will-change-transform;
+  }
 }
 
 body.dark {

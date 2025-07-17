@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   },
 
   // Add Font
-  modules: ["@nuxtjs/google-fonts"],
+  modules: ["@nuxtjs/google-fonts", "@nuxt/image"],
   googleFonts: {
     families: {
       Poppins: [100, 300, 400, 500, 600, 700, 900],

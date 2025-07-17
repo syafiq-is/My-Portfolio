@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { NuxtImg } from '#components';
+
+</script>
+
 <template>
   <header>
     <Navbar />
@@ -6,9 +11,9 @@
 
   <!-- HERO SECTION -->
   <section class="h-screen">
-    <img src="~/assets/img/Hero.png"
+    <img src="~/assets/img/Hero.webp"
       class="w-full h-[80%] object-cover [mask-image:linear-gradient(to_bottom,black_70%,transparent)]"
-      alt="Hero image">
+      alt="Hero image" />
 
     <div class="max-w-6xl mx-auto px-10">
       <div class="relative z-10 -mt-60 ">
@@ -30,7 +35,7 @@
         </div>
         <div class="mt-10">
           <a href="" class="bg-container px-5 py-3 rounded-lg hover:bg-brand hover:text-background">
-            Get my CV
+            Print CV
           </a>
         </div>
         <div class="h-20"></div>
@@ -80,8 +85,8 @@
     <p class="text-center">Some fun projects</p>
 
     <ul class="mt-10 max-w-6xl mx-auto px-10 flex flex-col gap-5">
-      <li class="rounded-xl overflow-clip max-w-2xl mx-auto">
-        <img src="~/assets/img/Hero.png" alt="" class="h-48 w-full object-cover">
+      <li class="rounded-xl overflow-clip max-w-2xl mx-auto hover-grow">
+        <img src="~/assets/img/projects-exposia.png" alt="" class="h-48 w-full object-cover" />
         <div class="bg-container p-5">
           <h1 class="font-semibold text-lg text-brand mb-2">Exposia</h1>
           <p class="text-justify">A project which attempts to solves the problem of small business by providing a way
@@ -90,20 +95,20 @@
             appropriate sections style to build a full landing page.</p>
 
           <ul class="mt-5 flex gap-5">
-            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
               <img src="~/assets/icons/laravel.svg" alt="laravel" />
             </li>
-            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
               <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
             </li>
-            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
               <img src="~/assets/icons/mysql.svg" alt="mysql" />
             </li>
           </ul>
         </div>
       </li>
-      <li class="rounded-xl overflow-clip max-w-2xl mx-auto">
-        <img src="~/assets/img/projects-portfolio.png" alt="" class="h-48 w-full object-cover">
+      <li class="rounded-xl overflow-clip max-w-2xl mx-auto hover-grow">
+        <img src="~/assets/img/projects-portfolio.png" alt="" class="h-48 w-full object-cover" />
         <div class="bg-container p-5">
           <h1 class="font-semibold text-lg text-brand mb-2">Portfolio</h1>
           <p class="text-justify">A commonly seen portfolio website to display and show myself, my projects, my skills,
@@ -112,18 +117,20 @@
             experiences</p>
 
           <ul class="mt-5 flex gap-2">
-            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
               <img src="~/assets/icons/nuxtjs.svg" alt="nuxtjs" />
             </li>
-            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
               <img src="~/assets/icons/vue.svg" alt="vue" />
             </li>
-            <li class="w-10 h-10 p-2 border rounded-xl flex justify-center items-center">
+            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
               <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
             </li>
           </ul>
         </div>
       </li>
+      <li class="mx-auto text-brand underline"><a href="https://www.linkedin.com/in/syafiq-ilham-sholehudin-8b3a77295/"
+          target="_blank">More on LinkedIn</a></li>
     </ul>
   </section>
 
@@ -252,34 +259,32 @@
     <div class="mt-10 max-w-6xl mx-auto px-10">
       <!-- Timeline Container -->
       <ul class="relative border-l-3 border-brand pl-6">
-        <!-- Timeline Items -->
-        <div class="relative mb-12">
-          <!-- Dot -->
-          <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
-
-          <p class="mb-6 text-brand font-semibold">Sep 2024 - Feb 2025 • 6 Month</p>
-
-          <img src="~/assets/img/exp-Forum_Asisten.png" alt="logo" class="w-20 aspect-square">
-
-          <!-- Job Info -->
-          <h1 class="mb-3 mt-5 text-2xl font-semibold">Lab Teaching Assistant</h1>
-          <p class="mb-3">Forum Asisten</p>
-          <p class="mb-3">Yogyakarta, Indonesia • On-Site</p>
-          <p class="mb-3 font-semibold">Responsibilities Include:</p>
-          <ul class="list-disc ml-5 text-justify">
-            <li>Managing the schedules of fellow assistants within the same course, ensuring smooth coordination.</li>
-            <li>Providing guidance and support to students, assisting with coursework and technical challenges.</li>
-            <li>Serve as a bridge between students and the lecturer, maintaining clear and effective communication.</li>
-          </ul>
-        </div>
-
-        <div class="relative mb-12">
+        <li class="relative mb-12">
           <!-- Dot -->
           <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
 
           <p class="mb-6 text-brand font-semibold">Feb 2025 - Feb 2025 • 1 Month</p>
 
-          <img src="~/assets/img/exp-AMCC.png" alt="logo" class="w-20 aspect-square">
+          <img src="~/assets/img/exp-infinitera.jpg" alt="logo" class="w-20 aspect-square" />
+
+          <!-- Job Info -->
+          <h1 class="mb-3 mt-5 text-2xl font-semibold">4th Place Finalist - Infinitera 1.0 Web Programming Competition
+          </h1>
+          <p class="mb-3">HMTIF Unissula</p>
+          <p class="mb-3 font-semibold">Achievement:</p>
+          <ul class="list-disc ml-5 text-justify">
+            <li>Participated in Infinitera 1.0, a national-level Web Programming Competition organized by HMTIF
+              Unissula, and successfully advanced to the final round, securing 4th place.</li>
+          </ul>
+        </li>
+
+        <li class="relative mb-12">
+          <!-- Dot -->
+          <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
+
+          <p class="mb-6 text-brand font-semibold">Feb 2025 - Feb 2025 • 1 Month</p>
+
+          <img src="~/assets/img/exp-AMCC.png" alt="logo" class="w-20 aspect-square" />
 
           <!-- Job Info -->
           <h1 class="mb-3 mt-5 text-2xl font-semibold">Event Comitee</h1>
@@ -293,7 +298,32 @@
             <li>Collaborated with the Equipment Committee to organize prizes and merchandise.</li>
             <li>Assisted the Scientific Committee in facilitating participant engagement during the event workshop.</li>
           </ul>
-        </div>
+        </li>
+
+        <li class="relative mb-12">
+          <!-- Dot -->
+          <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
+
+          <p class="mb-6 text-brand font-semibold">Sep 2024 - Feb 2025 • 6 Month</p>
+
+          <img src="~/assets/img/exp-Forum_Asisten.png" alt="logo" class="w-20 aspect-square" />
+
+          <!-- Job Info -->
+          <h1 class="mb-3 mt-5 text-2xl font-semibold">Lab Teaching Assistant</h1>
+          <p class="mb-3">Forum Asisten</p>
+          <p class="mb-3">Yogyakarta, Indonesia • On-Site</p>
+          <p class="mb-3 font-semibold">Responsibilities Include:</p>
+          <ul class="list-disc ml-5 text-justify">
+            <li>Coordinated the schedules of fellow lab assistants to ensure full coverage and smooth class sessions.
+            </li>
+            <li>Acted as a communication bridge between students and the lecturer, relaying feedback and announcements
+              efficiently.</li>
+            <li>Provided one-on-one and group guidance to students regarding coursework, debugging, and lab exercises.
+            </li>
+            <li>Took initiative to assist and manage student questions during the professor’s absence.</li>
+            <li>Ensured lab sessions ran smoothly by addressing technical issues and maintaining classroom order.</li>
+          </ul>
+        </li>
       </ul>
     </div>
   </section>
@@ -307,21 +337,22 @@
       <ul class="my-10 space-y-3">
         <li class="flex space-x-5 items-center">
           <div class="h-8 w-8 p-1 flex items-center justify-center">
-            <img src="~/assets/icons/gmail.svg" alt="gmail icon">
+            <img src="~/assets/icons/gmail.svg" alt="gmail icon" />
           </div>
           <a href="mailto:syafiqilham.sho@gmail.com">syafiqilham.sho@gmail.com</a>
         </li>
         <li class="flex space-x-5 items-center">
           <div class="h-8 w-8 p-1 flex items-center justify-center">
-            <img src="~/assets/icons/linkedin.svg" alt="github icon">
+            <img src="~/assets/icons/linkedin.svg" alt="github icon" />
           </div>
-          <a href="https://www.linkedin.com/in/syafiq-ilham-sholehudin-8b3a77295/">Syafiq Ilham Sholehudin</a>
+          <a href="https://www.linkedin.com/in/syafiq-ilham-sholehudin-8b3a77295/" target="_blank">Syafiq Ilham
+            Sholehudin</a>
         </li>
         <li class="flex space-x-5 items-center">
           <div class="h-8 w-8 p-1 flex items-center justify-center">
-            <img src="~/assets/icons/github.svg" alt="github icon">
+            <img src="~/assets/icons/github.svg" alt="github icon" />
           </div>
-          <a href="https://github.com/syafiq-is">syafiq-is</a>
+          <a href="https://github.com/syafiq-is" target="_blank">syafiq-is</a>
         </li>
       </ul>
     </div>
