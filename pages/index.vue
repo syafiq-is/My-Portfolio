@@ -34,8 +34,9 @@ import { NuxtImg } from '#components';
           </div>
         </div>
         <div class="mt-10">
-          <a href="" class="bg-container px-5 py-3 rounded-lg hover:bg-brand hover:text-background">
-            Print CV
+          <a href="/cv-syafiq_ilham_sholehudin.pdf"
+            class="bg-container px-5 py-3 rounded-lg hover:bg-brand hover:text-background" download>
+            Download CV
           </a>
         </div>
         <div class="h-20"></div>
