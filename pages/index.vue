@@ -1,361 +1,332 @@
 <script setup lang="ts">
-import { NuxtImg } from '#components';
+import { ref, onMounted, onUnmounted } from 'vue';
 
+const isLoading = ref(true);
+const error = ref(null);
+
+const dataItems = ref<any>([]);
+const activeFilter = ref('All')
+const showButton = ref(false);
+
+
+// Shows the button after scrolling 700px
+const handleScroll = () => { showButton.value = window.scrollY > 700; };
+const scrollToTop = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+
+onMounted(() => { window.addEventListener('scroll', handleScroll); });
+onUnmounted(() => { window.removeEventListener('scroll', handleScroll); });
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/data/data-EN.json');
+    if (!response.ok) throw new Error('Failed to fetch data');
+
+    dataItems.value = await response.json();
+
+  } catch (err: any) {
+    error.value = err.message;
+  } finally {
+    isLoading.value = false;
+  }
+});
 </script>
 
 <template>
   <header>
     <Navbar />
-    <BottomNav />
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="h-screen">
-    <img src="~/assets/img/Hero.webp"
-      class="w-full h-[80%] object-cover [mask-image:linear-gradient(to_bottom,black_70%,transparent)]"
-      alt="Hero image" />
+  <!-- ===================== Scroll to Top Button ===================== -->
+  <button v-show="showButton" @click="scrollToTop"
+    class="fixed bottom-8 right-8 z-50 p-3 bg-accent text-bg1 rounded-full shadow-lg transition-opacity duration-300 hover:bg-green-600 flex items-center justify-center cursor-pointer"
+    aria-label="Back to top">
+    <span  class="material-icons-outlined">
+      arrow_upward
+    </span>
+  </button>
 
-    <div class="max-w-6xl mx-auto px-10">
-      <div class="relative z-10 -mt-60 ">
-        <div class="text-brand">
-          <div class="font-light text-base">
-            Full-stack web developer
-          </div>
-          <div class="font-black my-4">
-            <div class="text-7xl">
-              SYAFIQ
-            </div>
-            <div class="text-4xl">
-              ILHAM SHOLEHUDIN
-            </div>
-          </div>
-          <div class="font-light text-base">
-            based in Indonesia
-          </div>
-        </div>
-        <div class="mt-10">
-          <a href="/cv-syafiq_ilham_sholehudin.pdf"
-            class="bg-container px-5 py-3 rounded-lg hover:bg-brand hover:text-background" download>
-            Download CV
-          </a>
-        </div>
-        <div class="h-20"></div>
-      </div>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero-pattern h-screen flex items-center relative overflow-hidden">
+    <!-- Gem decorations -->
+    <div class="absolute top-20 right-6 md:right-32 text-4xl md:text-5xl select-none animate-bounce"
+      style="animation-duration: 3s">
+      🟣
     </div>
-  </section>
+    <div class="absolute top-14 right-28 md:right-64 text-3xl select-none animate-bounce"
+      style="animation-duration: 4s; animation-delay: 0.5s">
+      🔴
+    </div>
+    <div class="absolute bottom-20 right-6 md:right-40 text-4xl select-none animate-bounce"
+      style="animation-duration: 3.5s; animation-delay: 1s">
+      🟢
+    </div>
+    <div class="absolute bottom-28 right-24 md:right-72 text-3xl select-none animate-bounce"
+      style="animation-duration: 4.5s; animation-delay: 0.3s">
+      🔵
+    </div>
 
-  <!-- About SECTION -->
-  <section id="about" class="py-24 bg-dark text-foreground">
-    <div class="max-w-6xl mx-auto px-6 md:px-10">
-      <h1 class="text-brand text-4xl md:text-6xl font-extrabold text-center mb-16 tracking-wide">
-        WHO AM I
-      </h1>
-
-      <div class="flex flex-col-reverse md:flex-row items-center gap-10">
-        <!-- Text Content -->
-        <div class="text-justify max-w-prose text-lg leading-relaxed">
-          <p class="mb-6">
-            I'm a <span class="text-brand font-semibold">web developer</span> with a burning passion for crafting sleek,
-            functional digital experiences.
+    <div class="max-w-6xl mx-auto px-4 md:px-8 w-full pt-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+        <!-- Left: text -->
+        <div class="flex-1 max-w-lg z-10">
+          <p class="font-poppins text-sm md:text-base text-fg2 mb-1">
+            Hi! I'm Syafiq
           </p>
-          <p class="mb-6">
-            I build modern websites using <span class="text-brand">Laravel</span>, <span
-              class="text-brand">NextJS</span>, and <span class="text-brand">NuxtJS</span>, and I'm always leveling up
-            my skills like a good dev should.
-          </p>
-          <p class="mb-6">
-            I'm a strong communicator and a team player, eager to bring fresh ideas to life. Whether it’s a sleek UI or
-            solving gnarly bugs, I’m here for it.
-          </p>
-          <p class="italic text-center text-brand mt-10">— Doing My Best —</p>
-        </div>
-
-        <!-- Image -->
-        <div class="flex-shrink-0">
-          <img src="~/assets/img/about-pic.jpg" alt="Portrait of Syafiq"
-            class="h-60 w-60 md:h-72 md:w-72 rounded-full object-cover border-4 border-brand shadow-lg hover:scale-105 transition duration-300 ease-in-out" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Projects SECTION -->
-  <section id="projects" class="py-16">
-    <h1 class="text-brand text-3xl font-semibold text-center">Featured Projects</h1>
-    <p class="text-center">Some fun projects</p>
-
-    <ul class="mt-10 max-w-6xl mx-auto px-10 flex flex-col gap-5">
-      <li class="rounded-xl overflow-clip max-w-2xl mx-auto hover-grow">
-        <img src="~/assets/img/projects-exposia.png" alt="" class="h-48 w-full object-cover" />
-        <div class="bg-container p-5">
-          <h1 class="font-semibold text-lg text-brand mb-2">Exposia</h1>
-          <p class="text-justify">A project which attempts to solves the problem of small business by providing a way
-            for them to
-            build a landing page in minutes. It allows to build a landing page in a modular way. They can choose the
-            appropriate sections style to build a full landing page.</p>
-
-          <ul class="mt-5 flex gap-5">
-            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/laravel.svg" alt="laravel" />
-            </li>
-            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
-            </li>
-            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/mysql.svg" alt="mysql" />
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="rounded-xl overflow-clip max-w-2xl mx-auto hover-grow">
-        <img src="~/assets/img/projects-portfolio.png" alt="" class="h-48 w-full object-cover" />
-        <div class="bg-container p-5">
-          <h1 class="font-semibold text-lg text-brand mb-2">Portfolio</h1>
-          <p class="text-justify">A commonly seen portfolio website to display and show myself, my projects, my skills,
-            and
-            my
-            experiences</p>
-
-          <ul class="mt-5 flex gap-2">
-            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/nuxtjs.svg" alt="nuxtjs" />
-            </li>
-            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/vue.svg" alt="vue" />
-            </li>
-            <li class="w-10 h-10 p-2 bg-background rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li class="mx-auto text-brand underline"><a href="https://www.linkedin.com/in/syafiq-ilham-sholehudin-8b3a77295/"
-          target="_blank">More on LinkedIn</a></li>
-    </ul>
-  </section>
-
-  <!-- Skills SECTION -->
-  <section id="skills" class="py-16 bg-dark">
-    <div class="max-w-6xl mx-auto px-10">
-      <h1 class="text-brand text-3xl font-semibold">Skills</h1>
-      <p>Click them for more details</p>
-
-      <div class="grid grid-cols-[min-content_1fr] gap-4 mt-6 text-brand">
-        <!-- Row 1 -->
-        <div>
-          <h2 class="font-light mr-10">Hard Skills</h2>
-        </div>
-        <div>
-          <ul class="flex space-x-2 space-y-2 flex-wrap text-sm">
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/react.svg" alt="react" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/vue.svg" alt="vue" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/nextjs.svg" alt="nextjs" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/nuxtjs.svg" alt="nuxtjs" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/laravel.svg" alt="laravel" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/javascript.svg" alt="javascript" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/typescript.svg" alt="typescript" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/python.svg" alt="python" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/php.svg" alt="php" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/html5.svg" alt="html5" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/css3.svg" alt="css3" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/tailwind_css.svg" alt="tailwind_css" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/git.svg" alt="git" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/github.svg" alt="github" />
-            </li>
-          </ul>
-
-          <ul class="flex space-x-2 space-y-2 flex-wrap text-sm mt-2">
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/supabase.svg" alt="supabase" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/firebase.svg" alt="firebase" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/mysql.svg" alt="mysql" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/postgresql.svg" alt="postgresql" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/visual_studio_code.svg" alt="visual studio code" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/figma.svg" alt="figma" class="h-8" />
-            </li>
-            <li class="w-12 h-12 p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <img src="~/assets/icons/blender.svg" alt="blender" />
-            </li>
-          </ul>
-        </div>
-
-        <!-- Row 2 -->
-        <div>
-          <h2 class="font-light mr-10">Soft Skills</h2>
-        </div>
-        <div>
-          <ul class="flex space-x-2 space-y-2 flex-wrap text-sm">
-            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <div>Public Speaking</div>
-            </li>
-            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <div>Team Collaboration</div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Row 3 -->
-        <div>
-          <h2 class="font-light mr-10">Languages</h2>
-        </div>
-        <div>
-          <ul class="flex space-x-2 space-y-2 flex-wrap text-sm">
-            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <div>English</div>
-            </li>
-            <li class="w-fit h-fit p-2 border rounded-xl flex justify-center items-center hover-raise">
-              <div>Indonesia</div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experiences SECTION -->
-  <section id="experiences" class="py-16">
-    <div class="max-w-6xl mx-auto px-10">
-      <h1 class="text-brand text-3xl font-semibold text-center">My Experiences</h1>
-      <p class="text-center">Not Much but Great Experiences</p>
-    </div>
-
-    <div class="mt-10 max-w-6xl mx-auto px-10">
-      <!-- Timeline Container -->
-      <ul class="relative border-l-3 border-brand pl-6">
-        <li class="relative mb-12">
-          <!-- Dot -->
-          <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
-
-          <p class="mb-6 text-brand font-semibold">Feb 2025 - Feb 2025 • 1 Month</p>
-
-          <img src="~/assets/img/exp-infinitera.jpg" alt="logo" class="w-20 aspect-square" />
-
-          <!-- Job Info -->
-          <h1 class="mb-3 mt-5 text-2xl font-semibold">4th Place Finalist - Infinitera 1.0 Web Programming Competition
+          <h1 class="section-heading text-3xl md:text-5xl leading-tight text-fg1 mb-4">
+            I design visuals,<br />
+            <span class="text-accent">build websites</span>, and<br />
+            analyzes data.
           </h1>
-          <p class="mb-3">HMTIF Unissula</p>
-          <p class="mb-3 font-semibold">Achievement:</p>
-          <ul class="list-disc ml-5 text-justify">
-            <li>Participated in Infinitera 1.0, a national-level Web Programming Competition organized by HMTIF
-              Unissula, and successfully advanced to the final round, securing 4th place.</li>
-          </ul>
-        </li>
+          <p class="font-poppins text-sm text-fg2 mb-7">
+            A creative developer based in Indonesia.
+          </p>
 
-        <li class="relative mb-12">
-          <!-- Dot -->
-          <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
+          <div class="flex items-center gap-3 flex-wrap">
+            <a href="#contact"
+              class="bg-accent hover:bg-green-600 text-bg1 font-poppins text-sm font-medium px-5 py-2.5 rounded-full transition-colors shadow-md shadow-green-200">
+              Contact Me
+            </a>
 
-          <p class="mb-6 text-brand font-semibold">Feb 2025 - Feb 2025 • 1 Month</p>
+            <a href="/cv-syafiq_ilham_sholehudin.pdf"
+              class="border border-fg1 hover:border-accent text-fg1 hover:text-accent font-poppins text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
+              download>
+              Download CV
+            </a>
+          </div>
+        </div>
 
-          <img src="~/assets/img/exp-AMCC.png" alt="logo" class="w-20 aspect-square" />
-
-          <!-- Job Info -->
-          <h1 class="mb-3 mt-5 text-2xl font-semibold">Event Comitee</h1>
-          <p class="mb-3">Amikom Computer Club</p>
-          <p class="mb-3">Yogyakarta, Indonesia • On-Site</p>
-          <p class="mb-3 font-semibold">Responsibilities Include:</p>
-          <ul class="list-disc ml-5 text-justify">
-            <li>Contributed to the pre-planning phase, ensuring smooth event execution.</li>
-            <li>Managed event flow and ensured adherence to the official rundown.</li>
-            <li>Coordinated with the Documentation and Design Committee to align event materials and visuals.</li>
-            <li>Collaborated with the Equipment Committee to organize prizes and merchandise.</li>
-            <li>Assisted the Scientific Committee in facilitating participant engagement during the event workshop.</li>
-          </ul>
-        </li>
-
-        <li class="relative mb-12">
-          <!-- Dot -->
-          <div class="absolute -left-[2.2rem] w-5 h-5 bg-background rounded-full border-3 border-brand"></div>
-
-          <p class="mb-6 text-brand font-semibold">Sep 2024 - Feb 2025 • 6 Month</p>
-
-          <img src="~/assets/img/exp-Forum_Asisten.png" alt="logo" class="w-20 aspect-square" />
-
-          <!-- Job Info -->
-          <h1 class="mb-3 mt-5 text-2xl font-semibold">Lab Teaching Assistant</h1>
-          <p class="mb-3">Forum Asisten</p>
-          <p class="mb-3">Yogyakarta, Indonesia • On-Site</p>
-          <p class="mb-3 font-semibold">Responsibilities Include:</p>
-          <ul class="list-disc ml-5 text-justify">
-            <li>Coordinated the schedules of fellow lab assistants to ensure full coverage and smooth class sessions.
-            </li>
-            <li>Acted as a communication bridge between students and the lecturer, relaying feedback and announcements
-              efficiently.</li>
-            <li>Provided one-on-one and group guidance to students regarding coursework, debugging, and lab exercises.
-            </li>
-            <li>Took initiative to assist and manage student questions during the professor’s absence.</li>
-            <li>Ensured lab sessions ran smoothly by addressing technical issues and maintaining classroom order.</li>
-          </ul>
-        </li>
-      </ul>
+        <!-- Right: avatar -->
+        <div class="relative flex-shrink-0 z-10">
+          <div class="hero-ring w-60 h-auto md:w-[400px] md:h-auto">
+            <img src="/assets/img/hero-img.png" alt="Syafiq" class="w-full h-full object-cover" />
+          </div>
+          <span class="absolute -top-4 -left-4 text-accent text-3xl select-none font-bold">✦</span>
+          <span class="absolute -bottom-3 -right-3 text-accent text-2xl select-none font-bold">✦</span>
+          <span class="absolute top-4 -right-6 text-accent text-lg select-none">✦</span>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- ===================== ABOUT ME ===================== -->
+  <section id="about" class="py-16 md:py-24 bg-bg1">
+    <div class="max-w-6xl mx-auto px-4 md:px-8">
+      <p class="font-poppins text-xs text-accent uppercase tracking-widest mb-1">
+        About
+      </p>
+      <h2 class="section-heading text-2xl md:text-3xl text-fg1 mb-1">
+        {{ dataItems.About?.title }}
+      </h2>
+      <span class="section-underline mb-6 block"></span>
+      <div class="max-w-5xl mt-6">
+        <p class="font-poppins text-justify text-sm md:text-base text-fg2 leading-relaxed">
+          {{ dataItems.About?.description }}
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <footer class="py-16 bg-container rounded-t-xl">
-    <div class="max-w-6xl mx-auto px-10 mb-16">
-      <p class="text-brand font-semibold">Contact Me</p>
-      <h1 class="text-3xl font-semibold">Let's Connect</h1>
+  <!-- ===================== FEATURED PROJECTS ===================== -->
+  <section id="projects" class="py-16 md:py-24 bg-bg2">
+    <div class="max-w-6xl mx-auto px-4 md:px-8">
+      <p class="font-poppins text-xs text-accent uppercase tracking-widest mb-1">
+        Projects
+      </p>
+      <h2 class="section-heading text-2xl md:text-3xl text-fg1 mb-1">
+        {{ dataItems.Projects?.title }}
+      </h2>
+      <span class="section-underline mb-8 block"></span>
 
-      <ul class="my-10 space-y-3">
-        <li class="flex space-x-5 items-center">
-          <div class="h-8 w-8 p-1 flex items-center justify-center">
-            <img src="~/assets/icons/gmail.svg" alt="gmail icon" />
+      <!-- Filter Buttons -->
+      <div class="flex gap-2 mb-8 flex-wrap">
+        <button v-for="(category, index) in dataItems.Projects?.data.categories" :key="index"
+          class="font-poppins text-xs font-medium px-3 py-1.5 rounded-full border border-gray-200 text-fg2 hover:border-accent hover:text-accent transition-colors"
+          @click="activeFilter = category" :class="{
+            'filter-btn active': activeFilter === category,
+            'filter-btn': activeFilter !== category
+          }">
+          {{ category }}
+        </button>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div v-for="(project, index) in dataItems.Projects?.data.projects" :key="index"
+          class="project-card bg-bg1 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+          :class="activeFilter === 'All' || project.category === activeFilter ? 'block' : 'hidden'">
+
+          <div class="relative overflow-hidden w-full aspect-video">
+            <img :src=project.imageUrl :alt=project.title
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+            <span
+              class="absolute top-3 left-3 bg-bg-dark text-fg-white text-xs font-poppins font-medium px-2.5 py-2 rounded-full">
+              {{ project.category }}
+            </span>
           </div>
-          <a href="mailto:syafiqilham.sho@gmail.com">syafiqilham.sho@gmail.com</a>
-        </li>
-        <li class="flex space-x-5 items-center">
-          <div class="h-8 w-8 p-1 flex items-center justify-center">
-            <img src="~/assets/icons/linkedin.svg" alt="github icon" />
+
+          <div class="p-4 flex flex-col">
+            <h3 class="font-exo font-semibold text-fg1 mb-1">
+              {{ project.title }}
+            </h3>
+
+            <p class="font-poppins text-xs text-fg2 mb-3 leading-relaxed flex-grow"> {{ project.description }}
+            </p>
+
+            <div class="flex items-center gap-1.5 mb-3">
+              <img v-for="(icon, index) in project.icons" :key="index" :src="icon.url" :alt="icon.name"
+                class="w-5 h-5" />
+            </div>
+
+            <div v-if="project.link" class="mt-auto">
+              <a :href="project.link.url" class="font-poppins text-xs text-accent font-medium hover:underline"
+                target="_blank">
+                {{ project.link.text }} →
+              </a>
+            </div>
           </div>
-          <a href="https://www.linkedin.com/in/syafiq-ilham-sholehudin-8b3a77295/" target="_blank">Syafiq Ilham
-            Sholehudin</a>
-        </li>
-        <li class="flex space-x-5 items-center">
-          <div class="h-8 w-8 p-1 flex items-center justify-center">
-            <img src="~/assets/icons/github.svg" alt="github icon" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MY Skills ===================== -->
+  <section id="expertise" class="py-16 md:py-24 bg-bg1">
+    <div class="max-w-6xl mx-auto px-4 md:px-8">
+      <p class="font-poppins text-xs text-accent uppercase tracking-widest mb-1">
+        Skills
+      </p>
+      <h2 class="section-heading text-2xl md:text-3xl text-fg1 mb-1">
+        My Expertise
+      </h2>
+      <span class="section-underline mb-8 block"></span>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div v-for="(skillCard, index) in dataItems.Skills?.data.skillCard" :key="index"
+          class="skill-card bg-bg2 border border-border1 rounded-2xl p-6"
+          :class="skillCard.colspan === 2 ? 'md:col-span-2' : 'md:col-span-1'">
+
+          <h3 class="font-exo font-semibold text-fg1 text-lg mb-2">
+            {{ skillCard.title }}
+          </h3>
+          <p class="font-poppins text-justify text-sm text-fg2 leading-relaxed mb-4">
+            {{ skillCard.description }}
+          </p>
+          <div class="flex items-center gap-2 mb-4 flex-wrap">
+            <img v-for="(icon, index) in skillCard.icons" :key="index" :src="icon.url" :alt="icon.name"
+              class="w-5 h-5" />
           </div>
-          <a href="https://github.com/syafiq-is" target="_blank">syafiq-is</a>
-        </li>
-      </ul>
+        </div>
+      </div>
+
+      <!-- Languages & Others -->
+      <div class="mt-12">
+        <h3 class="font-poppins text-sm font-semibold text-fg1 mb-5">
+          Languages
+        </h3>
+        <div class="flex flex-col md:flex-row gap-8 mb-8">
+          <div v-for="(lang, index) in dataItems.Skills?.data.skillLanguages" :key="index" class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+              <img :src="lang.iconUrl" :alt="lang.code" class="w-6 h-6" />
+              <span class="text-fg1 mb-1.5">{{ lang.code }}</span>
+              <span class="font-poppins text-xs text-fg2 font-medium">{{ lang.proficiency }}</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-1.5">
+              <div class="progress-bar-fill" :style="{ width: lang.proficiencyLevel + '%' }"></div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <h3 class="font-poppins text-sm font-semibold text-fg1 mb-3">
+          Others
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span v-for="(skill, index) in dataItems.Skills?.data.skillOther" :key="index"
+            class="font-poppins text-xs bg-border1 text-fg1 px-3 py-1.5 rounded-full ">
+            {{ skill }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MY EXPERIENCES ===================== -->
+  <section id="experiences" class="py-16 md:py-24 bg-bg2">
+    <div class="max-w-6xl mx-auto px-4 md:px-8">
+      <p class="font-poppins text-xs text-accent uppercase tracking-widest mb-1">
+        Experiences
+      </p>
+      <h2 class="section-heading text-2xl md:text-3xl text-fg1 mb-1">
+        My Experiences
+      </h2>
+      <span class="section-underline mb-8 block"></span>
+
+      <div class="flex flex-col gap-6">
+        <div v-for="(experience, index) in dataItems.Experiences?.data.experiences" :key="index"
+          class="bg-bg1 rounded-2xl p-6 shadow-sm border border-border1 hover:shadow-md transition-shadow">
+          <div class="flex gap-4">
+            <div class="">
+              <img :src="experience.imageUrl" :alt="experience.organizer" class="w-12 h-12" />
+            </div>
+            <div class="flex-1">
+              <p class="font-poppins font-semibold text-xs text-accent mb-1">
+                {{ experience.duration }}
+              </p>
+              <h3 class="font-exo font-semibold text-fg1 text-lg mb-1">
+                {{ experience.title }}
+              </h3>
+              <p class="font-poppins text-sm text-fg1 mb-1">
+                {{ experience.organizer }}
+              </p>
+              <p class="font-poppins text-xs text-gray-400 mb-4">
+                {{ experience.location }} &nbsp;•&nbsp; {{ experience.type }}
+              </p>
+              <p class="font-poppins text-xs text-fg1 mb-4">
+                {{ experience.description }}
+              </p>
+              <p class="font-poppins text-xs font-semibold text-fg1 mb-2">
+                Responsibilities include:
+              </p>
+              <ul class="font-poppins text-xs text-fg2 space-y-1 list-disc list-inside leading-relaxed">
+                <li v-for="(resp, index) in experience.responsibilities" :key="index">
+                  {{ resp }}
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contact" class="bg-bg-dark text-bg1 py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 md:px-8 text-center">
+      <h2 class="section-heading text-accent mb-3">
+        Contacts
+      </h2>
+      <h2 class="section-heading text-3xl md:text-4xl text-fg-white mb-3">
+        {{ dataItems.Contacts?.title }}
+      </h2>
+      <p class="font-poppins text-sm text-gray-400 mb-10">
+        {{ dataItems.Contacts?.quotes }}
+      </p>
+
+      <div class="flex items-center justify-center gap-6 mb-10">
+        <a v-for="(contact, index) in dataItems.Contacts?.data.socials" :href="contact.url" :key="index"
+          class="text-gray-400 hover:text-fg-white transition-colors">
+          <img :src="contact.iconUrl" :alt="contact.name" class="w-6 h-6" />
+        </a>
+
+      </div>
+
+      <p class="font-poppins text-xs text-gray-400">
+        Made with ❤️ by Syafiq Ilham S.
+      </p>
     </div>
   </footer>
 </template>

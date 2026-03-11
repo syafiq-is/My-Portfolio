@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+:root {
+  font-size: 12px;
+  scroll-behavior: smooth;
+
+  --accent: #31AA67; 
+
+  --bg1: #fff; /* white */
+  --bg2: #f9fafb; /* gray-50 */
+  --bg-dark: #2e3732;
+
+  --fg1: #101828; /* gray-900 */
+  --fg2: #391e1e; /* gray-500 */
+  --fg-white: #fff;
+
+  --border1: #f6f3f3; /* gray-100 */
+
+  --patternbg: #f3fff8;
+  --pattern1: #dcebe255;
+  --pattern2: #effaf4;
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+
+  --color-bg1: var(--bg1);
+  --color-bg2: var(--bg2);
+  --color-bg-dark: var(--bg-dark);
+
+  --color-fg1: var(--fg1);
+  --color-fg2: var(--fg2);
+  --color-fg-white: var(--fg-white);
+
+  --color-border1: var(--border1);
+}
+
+/* @layer utilities {
+  .hover-raise {
+    @apply hover:-translate-y-1 transition-transform duration-200 ease-in-out will-change-transform;
+  }
+
+  .hover-grow {
+    @apply hover:scale-105 transition-transform duration-200 ease-in-out will-change-transform;
+  }
+} */
+
+body.dark {
+  --bg1: #2d2b30;
+  --bg2: #1d1d1f;
+  --bg-dark: #2e3732;
+
+  --fg1: #fff;
+  --fg2: #bebebe;
+  --fg-white: #fff;
+
+  --border1: #000;
+
+  --patternbg: #2f3130;
+  --pattern1: #23252455;
+  --pattern2: #282b29;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-pattern {
+  background-color: var(--patternbg);
+  opacity: 1;
+  background:
+    linear-gradient(135deg, var(--pattern1) 25%, transparent 25%) -40px 0/ 80px
+      80px,
+    linear-gradient(225deg, var(--pattern2) 25%, transparent 25%) -40px 0/ 80px
+      80px,
+    linear-gradient(315deg, var(--pattern1) 25%, transparent 25%) 0px 0/ 80px
+      80px,
+    linear-gradient(45deg, var(--pattern2) 25%, var(--patternbg) 25%) 0px 0/
+      80px 80px;
+
+  animation: moveBackground 2s linear infinite;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position:
+      -40px 0,
+      -40px 0,
+      0 0,
+      0 0;
+  }
+  to {
+    /* Moving by 80px (the background size) makes it loop perfectly */
+    background-position:
+      40px 80px,
+      40px 80px,
+      80px 80px,
+      80px 80px;
+  }
+}
+
+.nav-brand {
+  font-family: "Exo", sans-serif;
+  font-weight: 800;
+}
+
+.section-heading {
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
+}
+.section-underline {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #22c55e, transparent);
+  margin-top: 4px;
+}
+
+.filter-btn {
+  background-color: transparent;
+}
+.filter-btn.active {
+  background-color: #22c55e;
+  color: white;
+  border-color: #22c55e;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(34, 197, 94, 0.12);
+}
+.skill-card {
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.progress-bar-fill {
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #22c55e, #86efac);
+}
+/* .hero-ring {
+        border-radius: 50%;
+        border: 4px solid #22c55e;
+        box-shadow:
+          0 0 0 10px #bbf7d044,
+          0 0 50px #22c55e33;
+      } */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 3px;
+}

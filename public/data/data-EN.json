@@ -1,0 +1,288 @@
+{
+  "Navbar": {
+    "data": {
+      "projects": "Projects",
+      "skills": "Skills",
+      "experiences": "Experiences",
+      "contacts": "Contacts",
+      "additionalText": "Creative Designer | Web Developer | Data Analyst"
+    }
+  },
+  "Hero": {
+    "data": {
+      "backgroundImage": "https://via.placeholder.com/1200x800",
+      "texts": [
+        "Hi! I'm Syafiq",
+        "I design visuals, build websites, and analyzes data.",
+        "A creative developer based in Indonesia."
+      ],
+      "buttons": [
+        {
+          "text": "Contact Me",
+          "link": "#contact"
+        },
+        {
+          "text": "Download CV",
+          "link": "/download-cv"
+        }
+      ]
+    }
+  },
+  "About": {
+    "title": "About Me",
+    "description": "I'm a Developer and a Designer who loves to design, develop websites, and analyze data. I enjoy creating visually appealing websites and digital experiences while using data to guide smarter decisions. Whether I'm building a web application, designing an interface, analysing datasets, or creating 3D visuals, my goal is the same: make things that look good and also work well."
+  },
+  "Projects": {
+    "title": "Featured Projects",
+    "data": {
+      "categories": ["All", "Data Analysis", "Web Development", "Design"],
+      "projects": [
+        {
+          "title": "Personal Portfolio Website",
+          "category": "Web Development",
+          "description": "A personal portfolio website to showcase my projects and skills.",
+          "imageUrl": "/assets/img/projects-portfolio.png",
+          "icons": [
+            { "name": "NuxtJS", "url": "/assets/icons/nuxtjs.svg" },
+            { "name": "Vue", "url": "/assets/icons/vue.svg" },
+            { "name": "Tailwind CSS", "url": "/assets/icons/tailwind_css.svg" }
+          ],
+          "link": {
+            "text": "View Project",
+            "url": "https://syafiq-ilham.vercel.app"
+          }
+        },
+        {
+          "title": "E-Kesiswaan",
+          "category": "Web Development",
+          "description": "A web-based student management system designed to streamline administrative tasks and enhance communication between students, teachers, and staff.",
+          "imageUrl": "/assets/img/projects-ekesiswaan.png",
+          "icons": [
+            { "name": "Laravel", "url": "/assets/icons/laravel.svg" },
+            { "name": "Javascript", "url": "/assets/icons/javascript.svg" },
+            { "name": "MySQL", "url": "/assets/icons/mysql.svg" }
+          ],
+          "link": null
+        },
+        {
+          "title": "BeatIT - IOT Smart Power Cord",
+          "category": "Web Development",
+          "description": "A Smart Extension Cord that can be controlled from your phone",
+          "imageUrl": "/assets/img/projects-beatit.png",
+          "icons": [
+            { "name": "NextJS", "url": "/assets/icons/nextjs.svg" },
+            { "name": "Firebase", "url": "/assets/icons/firebase.svg" }
+          ],
+          "link": {
+            "text": "View Project",
+            "url": "https://github.com/syafiq-is/BeatIT---IoT"
+          }
+        },
+        {
+          "title": "Exposia",
+          "category": "Web Development",
+          "description": "Build a landing page in minutes. Build a beautiful and functional landing page in a modular way. ",
+          "imageUrl": "/assets/img/projects-exposia.png",
+          "icons": [
+            { "name": "Laravel", "url": "/assets/icons/laravel.svg" },
+            { "name": "MySQL", "url": "/assets/icons/mysql.svg" }
+          ],
+          "link": {
+            "text": "View Project",
+            "url": "https://github.com/NicoIzumi30/exposia"
+          }
+        }
+      ]
+    }
+  },
+  "Skills": {
+    "title": "My Expertise",
+    "data": {
+      "skillCard": [
+        {
+          "title": "Data Analysis",
+          "description": "Transforming raw information into meaningful, data-driven insights. I specialize in identifying key trends and patterns through structured analysis, helping to simplify complex datasets into clear narratives that support better decision-making and strategic planning.",
+          "icons": [
+            {
+              "name": "Microsoft Excel",
+              "url": "/assets/icons/microsoft_excel.svg"
+            },
+            { "name": "Google Colab", "url": "/assets/icons/google-colab.svg" },
+            { "name": "Python", "url": "/assets/icons/python.svg" }
+          ],
+          "colspan": 1
+        },
+        {
+          "title": "Design",
+          "description": "Building modern, responsive, and high-performance web applications. I am dedicated to writing clean, maintainable code and developing seamless user experiences that are optimized for speed, accessibility, and growth across all devices.",
+          "icons": [
+            {
+              "name": "Adobe Photoshop",
+              "url": "/assets/icons/adobe_photoshop.svg"
+            },
+            {
+              "name": "Adobe Illustrator",
+              "url": "/assets/icons/adobe_illustrator.svg"
+            },
+            {
+              "name": "Adobe Premiere Pro",
+              "url": "/assets/icons/adobe_premiere_pro.svg"
+            },
+            { "name": "Affinity", "url": "/assets/icons/affinity.svg" },
+            {
+              "name": "davinci_resolve",
+              "url": "/assets/icons/davinci_resolve.svg"
+            },
+            { "name": "Blender", "url": "/assets/icons/blender.svg" },
+            { "name": "Figma", "url": "/assets/icons/figma.svg" }
+          ],
+          "colspan": 1
+        },
+        {
+          "title": "Web Development",
+          "description": "Creating impactful visual identities and user-centered interfaces. I focus on translating complex ideas into clear, engaging designs that prioritize both aesthetics and functionality, ensuring a consistent and professional look across all digital and print platforms.",
+          "icons": [
+            { "name": "React", "url": "/assets/icons/react.svg" },
+            { "name": "Vue", "url": "/assets/icons/vue.svg" },
+            { "name": "Nextjs", "url": "/assets/icons/nextjs.svg" },
+            { "name": "Nuxtjs", "url": "/assets/icons/nuxtjs.svg" },
+            { "name": "Laravel", "url": "/assets/icons/laravel.svg" },
+            { "name": "Javascript", "url": "/assets/icons/javascript.svg" },
+            { "name": "Typescript", "url": "/assets/icons/typescript.svg" },
+            { "name": "Python", "url": "/assets/icons/python.svg" },
+            { "name": "PHP", "url": "/assets/icons/php.svg" },
+            { "name": "HTML5", "url": "/assets/icons/html5.svg" },
+            { "name": "CSS3", "url": "/assets/icons/css3.svg" },
+            { "name": "TailwindCSS", "url": "/assets/icons/tailwind_css.svg" },
+            { "name": "Git", "url": "/assets/icons/git.svg" },
+            { "name": "Github", "url": "/assets/icons/github.svg" },
+            { "name": "Supabase", "url": "/assets/icons/supabase.svg" },
+            { "name": "Firebase", "url": "/assets/icons/firebase.svg" },
+            { "name": "MySQL", "url": "/assets/icons/mysql.svg" },
+            { "name": "PostgreSQL", "url": "/assets/icons/postgresql.svg" },
+            {
+              "name": "Visual Studio Code",
+              "url": "/assets/icons/visual_studio_code.svg"
+            }
+          ],
+          "colspan": 2
+        }
+      ],
+      "skillLanguages": [
+        {
+          "iconUrl": "/assets/flag-icons/id.svg",
+          "code": "🇮🇩",
+          "name": "Indonesia",
+          "proficiency": "Native",
+          "proficiencyLevel": 100
+        },
+        {
+          "iconUrl": "/assets/flag-icons/us.svg",
+          "code": "🇺🇸",
+          "name": "English",
+          "proficiency": "Professional Working Proficiency",
+          "proficiencyLevel": 80
+        },
+        {
+          "iconUrl": "/assets/flag-icons/cn.svg",
+          "code": "🇨🇳",
+          "name": "Indonesia",
+          "proficiency": "Elementary Proficiency (Learning...)",
+          "proficiencyLevel": 10
+        }
+      ],
+      "skillOther": ["Touch Typing (92 WPM)"]
+    }
+  },
+  "Experiences": {
+    "title": "My Experiences",
+    "data": {
+      "experiences": [
+        {
+          "imageUrl": "/assets/img/exp-Wesclic.png",
+          "duration": "Aug 2025 - Dec 2025  •  6 Months",
+          "title": "Web Developer Intern",
+          "organizer": "Wesclic Technology",
+          "location": "Yogyakarata, Indonesia",
+          "type": "On-site",
+          "description": "As a Web Developer Intern, I contributed to the development and maintenance of web applications, gaining hands-on experience in both frontend and backend technologies.",
+          "responsibilities": [
+            "Developed and maintained web application features across frontend and backend using Next.js/React and Laravel.",
+            "Built responsive UI components and integrated them with REST APIs to improve usability and performance.",
+            "Implemented backend functionality including authentication, CRUD operations, and database management.",
+            "Collaborated with the team using Asana for task tracking, sprint planning, and progress reporting."
+          ]
+        },
+        {
+          "imageUrl": "/assets/img/exp-infinitera.png",
+          "duration": "Jul 2025 - Jul 2025  •  1 Month",
+          "title": "4th Place Finalist - Infinitera 1.0 Web Programming Competition",
+          "organizer": "HMTIF Unissula",
+          "location": "Yogyakarata, Indonesia",
+          "type": "Remote",
+          "description": "Participated in Infinitera 1.0, a national-level Web Programming Competition organized by HMTIF Unissula, and successfully advanced to the final round, securing 4th place.",
+          "responsibilities": [
+            "Applying design into code to create a functional and visually appealing web application.",
+            "Collaborating with a team to brainstorm, plan, and execute the project within the competition's timeframe.",
+            "Utilizing web development technologies to build a responsive and user-friendly application."
+          ]
+        },
+        {
+          "imageUrl": "/assets/img/exp-AMCC.png",
+          "duration": "Feb 2025 - Mar 2025  •  1 Month",
+          "title": "Event Commitee",
+          "organizer": "Amikom Computer Club",
+          "location": "Yogyakarata, Indonesia",
+          "type": "On-site",
+          "description": "In AGS (Amikom Goes to School) 2025, I served as an Event Committee member, contributing to the planning and execution of the event.",
+          "responsibilities": [
+            "Contributed to the pre-planning phase, ensuring smooth event execution.",
+            "Managed event flow and ensured adherence to the official rundown.",
+            "Coordinated with the Documentation and Design Committee to align event materials and visuals.",
+            "Collaborated with the Equipment Committee to organize prizes and merchandise.",
+            "Assisted the Scientific Committee in facilitating participant engagement during the event workshop."
+          ]
+        },
+        {
+          "imageUrl": "/assets/img/exp-Forum_Asisten.png",
+          "duration": "Sep 2024 - Sep 2025  •  1 Year",
+          "title": "Computer Lab Assistant",
+          "organizer": "Forum Asisten",
+          "location": "Yogyakarata, Indonesia",
+          "type": "On-site",
+          "description": "As a Lab Computer Assistant and Assistant Coordinator, I support both technical operations and team coordination within the course environment.",
+          "responsibilities": [
+            "Coordinated the schedules of fellow lab assistants to ensure full coverage and smooth class sessions.",
+            "Acted as a communication bridge between students and the lecturer, relaying feedback and announcements efficiently.",
+            "Provided one-on-one and group guidance to students regarding coursework, debugging, and lab exercises.",
+            "Took initiative to assist and manage student questions during the professor’s absence.",
+            "Ensured lab sessions ran smoothly by addressing technical issues and maintaining classroom order."
+          ]
+        }
+      ]
+    }
+  },
+  "Contacts": {
+    "title": "Let's Connect",
+    "quotes": "Feel free to reach out for collaborations, inquiries, or just to say hi!",
+    "data": {
+      "socials": [
+        {
+          "name": "Github",
+          "iconUrl": "/assets/icons/github.svg",
+          "url": "https://github.com/syafiq-is"
+        },
+        {
+          "name": "LinkedIn",
+          "iconUrl": "/assets/icons/linkedin.svg",
+          "url": "https://www.linkedin.com/in/syafiq-ilham-sholehudin-8b3a77295/"
+        },
+        {
+          "name": "Gmail",
+          "iconUrl": "/assets/icons/gmail.svg",
+          "url": "https://github.com/syafiq-is"
+        }
+      ]
+    }
+  }
+}

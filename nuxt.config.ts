@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // Add Tailwind
-  css: ["~/assets/css/main.css"],
+  css: ["/main.css"],
   vite: {
     plugins: [tailwindcss()],
   },
@@ -16,6 +16,19 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Poppins: [100, 300, 400, 500, 600, 700, 900],
+      Exo: [100, 300, 400, 500, 600, 700, 900],
+    },
+  },
+
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.svg",
+        },
+      ],
     },
   },
 });
