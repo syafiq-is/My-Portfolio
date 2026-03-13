@@ -153,14 +153,14 @@ onMounted(async () => {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div v-for="(project, index) in dataItems.Projects?.data.projects" :key="index"
           class="project-card bg-bg1 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-          :class="activeFilter === 'All' || project.category === activeFilter ? 'block' : 'hidden'">
+          :class="activeFilter === 'All' || project.categories.includes(activeFilter) ? 'block' : 'hidden'">
 
           <div class="relative overflow-hidden w-full aspect-video">
             <img :src=project.imageUrl :alt=project.title
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
             <span
               class="absolute top-3 left-3 bg-bg-dark text-fg-white text-xs font-poppins font-medium px-2.5 py-2 rounded-full">
-              {{ project.category }}
+              {{ project.categories.join(', ') }}
             </span>
           </div>
 

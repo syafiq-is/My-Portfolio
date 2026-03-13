@@ -35,11 +35,25 @@
   "Projects": {
     "title": "Featured Projects",
     "data": {
-      "categories": ["All", "Data Analysis", "Web Development", "Design"],
+      "categories": ["All", "Data Analysis", "Web Development", "IoT"],
       "projects": [
         {
+          "title": "Sales Data Analysis",
+          "categories": ["Data Analysis"],
+          "description": "An analysis of sales data to identify trends and opportunities.",
+          "imageUrl": "/assets/img/projects-sales-analysis.png",
+          "icons": [
+            { "name": "Google Colab", "url": "/assets/icons/google-colab.svg" },
+            { "name": "Python", "url": "/assets/icons/python.svg" }
+          ],
+          "link": {
+            "text": "View Project",
+            "url": "https://colab.research.google.com/drive/1VMbn-pgr891GlYjny4Fd4nSxYfbs-gGB?usp=sharing"
+          }
+        },
+        {
           "title": "Personal Portfolio Website",
-          "category": "Web Development",
+          "categories": ["Web Development"],
           "description": "A personal portfolio website to showcase my projects and skills.",
           "imageUrl": "/assets/img/projects-portfolio.png",
           "icons": [
@@ -54,7 +68,7 @@
         },
         {
           "title": "E-Kesiswaan",
-          "category": "Web Development",
+          "categories": ["Web Development"],
           "description": "A web-based student management system designed to streamline administrative tasks and enhance communication between students, teachers, and staff.",
           "imageUrl": "/assets/img/projects-ekesiswaan.png",
           "icons": [
@@ -66,7 +80,7 @@
         },
         {
           "title": "BeatIT - IOT Smart Power Cord",
-          "category": "Web Development",
+          "categories": ["Web Development", "IoT"],
           "description": "A Smart Extension Cord that can be controlled from your phone",
           "imageUrl": "/assets/img/projects-beatit.png",
           "icons": [
@@ -80,7 +94,7 @@
         },
         {
           "title": "Exposia",
-          "category": "Web Development",
+          "categories": ["Web Development"],
           "description": "Build a landing page in minutes. Build a beautiful and functional landing page in a modular way. ",
           "imageUrl": "/assets/img/projects-exposia.png",
           "icons": [
